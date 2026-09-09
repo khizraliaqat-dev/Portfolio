@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+
+    /* ================= HERO IMAGE ANIMATION ================= */
+
+    @keyframes floatImage {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-12px);
+        }
+    }
+
+    .animate-float {
+        animation: floatImage 5s ease-in-out infinite;
+    }
+
+
+    /* ================= GLOW ANIMATION ================= */
+
+    @keyframes glowPulse {
+        0%, 100% {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.35);
+        }
+
+        50% {
+            box-shadow: 0 0 45px rgba(139, 92, 246, 0.75);
+        }
+    }
+
+    .glow-animation {
+        animation: glowPulse 3s ease-in-out infinite;
+    }
+
+
+    /* ================= CARD HOVER ================= */
+
+    .portfolio-card {
+        transition: all 0.4s ease;
+    }
+
+    .portfolio-card:hover {
+        transform: translateY(-10px);
+        box-shadow:
+            0 15px 40px rgba(59, 130, 246, 0.18),
+            0 0 25px rgba(139, 92, 246, 0.12);
+    }
+
+
+    /* ================= SOCIAL ICON HOVER ================= */
+
+    .social-icon {
+        transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+        transform: translateY(-5px) scale(1.08);
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+    }
+
+
+    /* ================= BUTTON GLOW ================= */
+
+    .glow-button {
+        transition: all 0.3s ease;
+    }
+
+    .glow-button:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 0 25px rgba(99, 102, 241, 0.65);
+    }
+
+
+    .typing-cursor {
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./output.css">
+      <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+    <style>
+
+    /* ================= SOCIAL ICONS ================= */
+
+    .social-icon {
+        position: relative;
+        z-index: 30;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+        transform: translateY(-6px) scale(1.12);
+        box-shadow: 0 0 22px rgba(59, 130, 246, 0.75);
+    }
+
+    .social-icon:active {
+        transform: translateY(-2px) scale(0.96);
+    }
+
+</style>
+    <title>KHIZRAPORTFOLIO</title>
+</head>
+<body>
+    
+
+<!-- ---------------Navigation bar--------------- --> 
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="relative z-50 flex items-center justify-between h-18 px-4 lg:px-8 text-white bg-blue-900 shadow-lg">
+
+    <!-- Logo -->
+    <a href="#home">
+        <img
+            class="w-14 h-14 object-contain"
+            src="Images/khizralogo.png"
+            alt="Khizra Liaqat Logo">
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden lg:flex items-center gap-8">
+
+        <a href="#home" class="hover:text-yellow-300 uppercase">
+            Home
+        </a>
+
+        <a href="#about" class="hover:text-yellow-300 uppercase">
+            About
+        </a>
+
+        <a href="#skills" class="hover:text-yellow-300 uppercase">
+            Skills
+        </a>
+
+        <a href="#projects" class="hover:text-yellow-300 uppercase">
+            Projects
+        </a>
+
+        <a href="#Education" class="hover:text-yellow-300 uppercase">
+            Education
+        </a>
+
+        <a href="#contact" class="hover:text-yellow-300 uppercase">
+            Contact
+        </a>
+
+    </div>
+
+    <!-- Desktop CV -->
+    <a
+        href="KhizraCV.pdf"
+        download
+        class="hidden lg:block bg-blue-500 rounded-xl px-5 py-2 hover:bg-yellow-500 transition">
+        Download CV
+    </a>
+
+    <!-- Mobile Hamburger Button -->
+    <button
+        id="menu-btn"
+        type="button"
+        aria-expanded="false"
+        aria-label="Open navigation menu"
+        class="lg:hidden flex items-center justify-center w-11 h-11 rounded-lg bg-blue-800 hover:bg-blue-700 transition">
+
+        <!-- Hamburger Icon -->
+        <svg
+            id="menu-icon"
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24">
+
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16">
+            </path>
+
+        </svg>
+
+        <!-- Close Icon -->
+        <svg
+            id="close-icon"
+            class="hidden w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24">
+
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12">
+            </path>
+
+        </svg>
+
+    </button>
+
+    <!-- Mobile Menu -->
+    <div
+        id="mobile-menu"
+        class="hidden absolute top-full left-0 w-full bg-blue-900 shadow-xl border-t border-blue-800">
+
+        <div class="flex flex-col items-center py-6 gap-5">
+
+            <a href="#home"
+               class="mobile-link uppercase hover:text-yellow-300 transition">
+                Home
+            </a>
+
+            <a href="#about"
+               class="mobile-link uppercase hover:text-yellow-300 transition">
+                About
+            </a>
+
+            <a href="#skills"
+               class="mobile-link uppercase hover:text-yellow-300 transition">
+                Skills
+            </a>
+
+            <a href="#projects"
+               class="mobile-link uppercase hover:text-yellow-300 transition">
+                Projects
+            </a>
+
+            <a href="#Education"
+               class="mobile-link uppercase hover:text-yellow-300 transition">
+                Education
+            </a>
+
+            <a href="#contact"
+               class="mobile-link uppercase hover:text-yellow-300 transition">
+                Contact
+            </a>
+
+            <!-- Mobile CV -->
+            <a
+                href="KhizraCV.pdf"
+                download
+                class="mobile-link bg-blue-500 px-5 py-2 rounded-xl hover:bg-yellow-500 transition">
+                Download CV
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+    <!-- --------- HERO SECTION----------- -->
+     
+
+     
+ <section id="home" class="relative overflow-hidden bg-gradient-to-r from-blue-950 via-blue-900 to-indigo-900  min-h-screen">
+    
+    <div class="absolute w-72 h-72 bg-blue-500/20 rounded-full blur-3xl top-20 left-10"></div>
+    <div class="absolute w-80 h-80 bg-purple-500/20 rounded-full blur-3xl bottom-20 right-10"></div>  
+    
+    <div class="text-center text-gray-300 animate-bounce mt-10">
+↓
+</div>
+    <div class="container mx-auto px-6 lg:px-12  gap-16
+    flex flex-col lg:flex-row items-center justify-between py-20">
+        <div class="lg:w-1/2 space-y-5 "> 
+            <p CLASS="text-lg text-gray-300">
+               Hello,I'm
+            </p>
+            <h1 class=" font-extrabold text-5xl text-cyan-300 lg:text-7xl ">
+               KHIZRA LIAQAT
+            </h1>
+            <!-- <h3 class=" text-2xl font-semibold text-gray-200 ">
+                Frontend Developer|
+            </h3> -->
+            <p class="text-xl font-semibold text-gray-100 ">
+                Applied Computing Student
+            </p>
+            <h4 class="text-3xl font-semibold text-white">
+    <span id="typing-text"></span><span class="typing-cursor">|</span>
+</h4>
+            <p class="text-gray-200 mt-4 max-w-lg leading-8">
+              I am a Applied Computing Student with a passion<br>
+              for building responsive and user-friendly<br>
+              I Love turning ideas into real web experiences.
+            </p>
+           <div class="flex gap-4 mt-8">
+
+    <a href="#contact"
+       class="glow-button
+              bg-gradient-to-r from-blue-600 to-purple-600
+              text-white
+              px-7 py-3
+              rounded-xl
+              shadow-lg shadow-blue-500/30
+              flex items-center gap-2">
+
+        Contact Me
+
+        <span>→</span>
+
+    </a>
+
+
+    <a href="KhizraCV.pdf"
+       download
+       class="glow-button
+              border border-white/50
+              text-white
+              px-7 py-3
+              rounded-xl
+              flex items-center gap-2
+              hover:bg-white/10">
+
+        Download CV
+
+        <span>↓</span>
+
+    </a>
+
+</div>
+            <!-- SOCIAL ICONS -->
+
+<div class="flex gap-4 mt-8">
+
+    <!-- GitHub -->
+    <a href="https://github.com/khizraliaqat-dev"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="social-icon w-11 h-11
+       flex items-center justify-center
+       rounded-full
+       bg-white/10
+       border border-white/20
+       text-white
+       hover:bg-white
+       hover:text-gray-900">
+
+        <svg class="w-5 h-5"
+             fill="currentColor"
+             viewBox="0 0 24 24">
+
+            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.69-3.88-1.54-3.88-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.35.78 1.04.78 2.1v3.1c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/>
+
+        </svg>
+
+    </a>
+
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/khizra-liaqat-91162039b/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="social-icon w-11 h-11
+              flex items-center justify-center
+              rounded-full
+              bg-white/10
+              border border-white/20
+              text-white
+              hover:bg-blue-600">
+
+        <svg class="w-5 h-5"
+             fill="currentColor"
+             viewBox="0 0 24 24">
+
+            <path d="M20.45 20.45h-3.56v-5.58c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.67H9.35V8.99h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.61 0 4.28 2.38 4.28 5.48v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V8.99h3.56v11.46z"/>
+
+        </svg>
+
+    </a>
+
+
+    <!-- Email -->
+    <a href="mailto:khizraliaqat121@gmail.com"
+       class="social-icon w-11 h-11
+              flex items-center justify-center
+              rounded-full
+              bg-white/10
+              border border-white/20
+              text-white
+              hover:bg-purple-600">
+
+        <svg class="w-5 h-5"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             viewBox="0 0 24 24">
+
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="m3 7 9 6 9-6"/>
+
+        </svg>
+
+    </a>
+
+</div>
+        </div>
+    
+        <!-- HERO IMAGE -->
+<!-- HERO IMAGE -->
+<div class="lg:w-1/2 flex justify-center items-center">
+
+    <div class="hero-image-wrapper relative 
+                w-[320px] h-[350px] 
+                lg:w-[470px] lg:h-[500px]">
+
+        <!-- SOFT BLUE/PURPLE GLOW -->
+        <div class="absolute inset-10
+                    bg-blue-500/25
+                    blur-[80px]
+                    rounded-full
+                    animate-pulse">
+        </div>
+
+
+        <!-- BACK PURPLE SHAPE -->
+        <div class="absolute top-10 right-5
+                    w-72 h-80
+                    lg:w-96 lg:h-[430px]
+                    bg-purple-500/25
+                    rounded-[45%_55%_55%_45%]
+                    rotate-12
+                    blur-sm">
+        </div>
+
+
+        <!-- BLUE SHAPE -->
+        <div class="absolute bottom-8 left-0
+                    w-64 h-72
+                    lg:w-80 lg:h-96
+                    bg-blue-500/35
+                    rounded-[55%_45%_40%_60%]
+                    -rotate-12">
+        </div>
+
+
+        <!-- IMAGE -->
+        <div class="absolute inset-8
+                    rounded-[45%_55%_55%_45%]
+                    overflow-hidden
+                    animate-float
+                    z-10">
+
+            <img
+                src="Images/khizra.png"
+                alt="Khizra Liaqat"
+                class="w-full h-full
+                       object-cover
+                       object-top
+                       hover:scale-105
+                       transition-transform
+                       duration-700">
+        </div>
+
+
+        <!-- FLOATING CIRCLE -->
+        <div class="absolute top-12 left-2
+                    w-5 h-5
+                    rounded-full
+                    border-2 border-cyan-300/70
+                    shadow-[0_0_10px_rgba(34,211,238,0.5)]
+                    animate-pulse">
+        </div>
+
+
+        <!-- FLOATING PURPLE DOT -->
+        <div class="absolute bottom-20 right-0
+                    w-4 h-4
+                    rounded-full
+                    bg-purple-400/70
+                    shadow-[0_0_12px_rgba(168,85,247,0.6)]
+                    animate-ping">
+        </div>
+
+
+        <!-- SMALL DECORATIVE DOTS -->
+        <div class="absolute top-4 right-12
+                    grid grid-cols-3 gap-2 opacity-60">
+
+            <span class="w-1 h-1 bg-cyan-300 rounded-full"></span>
+            <span class="w-1 h-1 bg-cyan-300 rounded-full"></span>
+            <span class="w-1 h-1 bg-cyan-300 rounded-full"></span>
+
+            <span class="w-1 h-1 bg-purple-400 rounded-full"></span>
+            <span class="w-1 h-1 bg-purple-400 rounded-full"></span>
+            <span class="w-1 h-1 bg-purple-400 rounded-full"></span>
+
+        </div>
+
+    </div>
+
+</div>
+
+        <svg class="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 150"
+            xmlns="http://www.w3.org/2000/svg">
+
+           <path fill="white" d="M0,96L80,106.7C160,117,320,139,480,133.3C640,128,800,96,960,80C1120,64,1280,64,1360,64L1440,64L1440,160L0,160Z">
+           </path>
+
+        </svg>
+    </div>
+</section>
+<!-- ---------- About------------ -->
+<section id="about" class="py-20 bg-slate-50">
+    <div class="container mx-auto px-6">
+
+    <h2 class="text-4xl font-bold text-center text-blue-900 tracking-wide uppercase">
+      About Me
+    </h2>
+
+<div
+    class="w-24 h-1 bg-blue-500 mx-auto mt-3 rounded-full"></div>
+    <p class="text-gray-600 max-w-3xl mx-auto text-center leading-8 mt-8">
+      I am a BS Applied Computing student passionate about building responsive websites and learning modern web technologies.
+      I enjoy solving problems, creating clean user interfaces, and continuously improving my development skills.
+      My goal is to become a professional Full Stack Developer and build impactful digital solutions.
+    </p>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16 items-start">
+
+    <div class="bg-white rounded-3xl shadow-2xl p-7 mb-8 space-y-5 hover:-translate-y-2 hover:scale-105 transition-all duration-300 border border-gray-100">
+        <h3 class="text-2xl font-bold text-blue-900 mb-6">
+         Personal Information
+        </h3>
+       <p>
+         <strong>👤 Name:</strong> Khizra Liaqat
+       </p>
+       <p>
+         <strong>🎓 Education:</strong> BS Applied Computing
+       </p>
+       <p>
+         <strong>🏫 University:</strong> UET Lahore
+        </p>
+       <p>
+         <strong>💻 Role:</strong> Frontend Developer
+        </p>
+       <p>
+         <strong>📍Country:</strong> Pakistan
+        </p>
+
+    </div>
+
+   <div class="bg-gradient-to-br from-blue-900 to-indigo-900 text-white rounded-2xl shadow-xl p-8 mb-8 space-y-5 hover:scale-105 transition-all duration-300 hover:-translate-y-2">
+        <h3 class="text-2xl font-bold mb-6">
+          Quick Facts
+         </h3>
+         <ul class="space-y-4 text-cyan-300">
+            <li>✔ Passionate Frontend Developer</li>
+
+           <li>✔ Learning JavaScript</li>
+
+           <li>✔ Love Responsive Design</li>
+
+           <li>✔ Strong Python Basics</li>
+
+           <li>✔ Goal: Full Stack Developer</li>
+         </ul>
+
+    </div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ---------- skills section--------- -->
+
+
+<section id="skills" class="py-20 bg-white shadow">
+   
+                  
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-blue-900 uppercase tracking-wide text-center">
+        My Skills</h2>
+        <h3 class="text-2xl font-bold text-blue-900 mt-8 mb-1 text-center">
+           Frontend
+       </h3>
+    
+      <div class="w-24 h-1 bg-cyan-400 mx-auto rounded-full "></div>
+      <p class="text-center text-gray-600 mt-8 max-w-2xl mx-auto">
+          Here are the technologies I have learned and continue to improve every day.
+      </p>
+
+                    
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+             <!-- ----------HTML-------------- -->
+       <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-gray-200 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 ease-in-out">
+       <h4 class="text-5xl mb-4">
+        <i class="devicon-html5-plain colored"></i>
+       </h4>
+        <h3 class="text-xl font-bold text-blue-900">
+          HTML5
+      </h3>
+        <p class="text-gray-500 mt-2">
+           Structure of Web Pages
+       </p>
+        <div class="w-full bg-gray-200 rounded-full h-2 mt-5">
+       <div class="bg-cyan-400 h-2 rounded-full w-[95%]"></div>
+       </div>
+      <p class="mt-3 font-semibold">
+      95%
+      </p>
+      </div>
+    
+
+          <!-- ---------CSS------- -->
+
+       <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-gray-200 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 ease-in-out">
+       <h4 class="text-4xl mb-4">
+        <i class="devicon-css3-plain colored"></i>
+       </h4>
+        <h3 class="text-xl font-bold text-blue-900">
+          CSS3
+        </h3>
+        <p class="text-gray-500 mt-2">
+           Beautiful Styling 
+        </p>
+        <div class="w-full bg-gray-200 rounded-full h-2 mt-5">
+       <div class="bg-cyan-400 h-2 rounded-full w-[90%]"></div>
+       </div>
+      <p class="mt-3 font-semibold">
+      90%
+      </p>
+      </div>
+
+      <!-- -------------Tailwind CSS--------- -->
+       <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-gray-200 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 ease-in-out">
+       <h4 class="text-4xl mb-4">
+        <i class="devicon-tailwindcss-original colored"></i>
+       </h4>
+        <h3 class="text-xl font-bold text-blue-900">
+          Tailwind CSS
+        </h3>
+        <p class="text-gray-500 mt-2">
+           Fast UI Development 
+        </p>
+        <div class="w-full bg-gray-200 rounded-full h-2 mt-5">
+       <div class="bg-cyan-400 h-2 rounded-full w-[85%]"></div>
+       </div>
+      <p class="mt-3 font-semibold">
+          85%
+      </p>
+      </div>
+      <!-- ------ JavaScript---------- -->
+       <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-gray-200 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 ease-in-out">
+       <h4 class="text-4xl mb-4">
+        <i class="devicon-javascript-plain colored"></i>
+       </h4>
+        <h3 class="text-xl font-bold text-blue-900">
+          JavaScript
+        </h3>
+        <p class="text-gray-500 mt-2">
+           Interactive Websites
+        </p>
+        <div class="w-full bg-gray-200 rounded-full h-2 mt-5">
+       <div class="bg-cyan-400 h-2 rounded-full w-[60%]"></div>
+       </div>
+      <p class="mt-3 font-semibold">
+          60%
+      </p>
+      </div>
+</div>
+      <!-- ------------ BACKEND---------- -->
+   <h3 class="text-2xl font-bold text-blue-900 mt-16 mb-2 text-center">
+      Backend
+   </h3>
+   <div class="w-24 h-1 bg-cyan-400 mx-auto rounded-full "></div>
+   
+   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-5">
+     <!-- --------- Python---------- -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-gray-200 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 ease-in-out">
+       <h4 class="text-4xl mb-4">
+       <i class="devicon-python-plain colored"></i>
+       </h4>
+        <h3 class="text-xl font-bold text-blue-900">
+          Python
+        </h3>
+        <p class="text-gray-500 mt-2">
+           Backend Development 
+        </p>
+        <div class="w-full bg-gray-200 rounded-full h-2 mt-5">
+       <div class="bg-cyan-400 h-2 rounded-full w-[90%]"></div>
+       </div>
+      <p class="mt-3 font-semibold">
+          90%
+      </p>
+      </div>
+          <!-- ----------SQL----------- -->
+     <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-gray-200 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 ease-in-out">
+       <h4 class="text-4xl mb-4">
+        <i class="devicon-microsoftsqlserver-plain colored"></i>
+       </h4>
+        <h3 class="text-xl font-bold text-blue-900">
+          SQL
+        </h3>
+        <p class="text-gray-500 mt-2">
+           Database Management 
+        </p>
+        <div class="w-full bg-gray-200 rounded-full h-2 mt-5">
+       <div class="bg-cyan-400 h-2 rounded-full w-[80%]"></div>
+       </div>
+      <p class="mt-3 font-semibold">
+          80%
+      </p>
+      </div>
+      <!-- -----------(Git & GitHub)---------->
+    <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-gray-200 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 ease-in-out">
+       <h4 class="text-4xl mb-4">
+       <i class="devicon-git-plain colored"></i>
+       <i class="devicon-github-original colored"></i>
+       </h4>
+        <h3 class="text-xl font-bold text-blue-900">
+          Git & GitHub
+        </h3>
+        <p class="text-gray-500 mt-2">
+          Version Control
+        </p>
+        <div class="w-full bg-gray-200 rounded-full h-2 mt-5">
+       <div class="bg-cyan-400 h-2 rounded-full w-[70%]"></div>
+       </div>
+      <p class="mt-3 font-semibold">
+          70%
+      </p>
+      </div>
+</div>
+</section>
+
+ <!-- --------- project------- -->
+ <section id="projects" class="py-20 bg-slate-50 shadow">
+<div class="container mx-auto px-6">
+
+    <h2 class="text-4xl font-bold text-center text-blue-900 tracking-wide uppercase">
+      PROJECTS
+    </h2>
+
+<div
+    class="w-24 h-1 bg-blue-500 mx-auto mt-3 rounded-full"></div>
+
+    <!-- Project Filters -->
+
+<div class="flex flex-wrap justify-center gap-4 mt-8">
+
+    <button class="filter-btn bg-blue-600 text-white px-5 py-2 rounded-lg"
+            data-filter="all">
+        All
+    </button>
+
+    <button class="filter-btn bg-blue-100 text-blue-900 px-5 py-2 rounded-lg"
+            data-filter="web">
+        Web
+    </button>
+
+    <button class="filter-btn bg-blue-100 text-blue-900 px-5 py-2 rounded-lg"
+            data-filter="python">
+        Python
+    </button>
+
+    <button class="filter-btn bg-blue-100 text-blue-900 px-5 py-2 rounded-lg"
+            data-filter="csharp">
+        C#
+    </button>
+
+</div>
+
+ <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 mt-12">
+    <!-- ----blood donation system -->
+    <div class="project-card bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col hover:-translate-y-3 transition-all duration-300"
+     data-category="python">
+       <img src="Images/picture.jpg" class="rounded-xl h-48 w-full object-cover">
+       <div class="p-8">
+        <h3 class="text-2xl font-bold text-blue-900">
+          🩸 Blood Donation System
+        </h3>
+        <p class="text-gray-500 mt-4 leading-7">
+           A web-based system where users can register as blood donors,
+           request blood, and manage donations through an admin panel.
+        </p>
+        <div class="flex gap-4 mt-6 ">
+            <button 
+    type="button"
+    class="project-details bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700"
+    data-project="blood">
+    Details
+</button>
+           <a href="https://github.com/khizraliaqat-dev"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="border border-blue-600 text-blue-600 px-5 py-2 rounded-lg hover:bg-blue-600 hover:text-white">
+    GitHub
+</a>
+        </div>
+    </div>
+    </div>
+ <!-- ----------RESQNet -->
+     <div class="project-card bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col hover:-translate-y-3 transition-all duration-300"
+     data-category="csharp">
+       <img src="Images/RESQNET.png" class="rounded-xl h-48 w-full object-cover">
+       <div class="p-8">
+        <h3 class="text-2xl font-bold text-blue-900">
+          🚑 ResQNet
+        </h3>
+        <p class="text-gray-500 mt-4 leading-7">
+          A disaster management system that helps coordinate volunteers,
+           manage shelters and emergency requests.
+        </p>
+        <div class="flex gap-4 mt-6 ">
+    <button 
+    type="button"
+    class="project-details bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700"
+    data-project="resqnet">
+    Details
+</button>
+           <a href="https://github.com/khizraliaqat-dev"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="border border-blue-600 text-blue-600 px-5 py-2 rounded-lg hover:bg-blue-600 hover:text-white">
+    GitHub
+</a>
+        </div>
+       </div>
+     </div>
+<!-- ------ Personal PORTFOLIO -->
+   <div class="project-card bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col hover:-translate-y-3 transition-all duration-300"
+     data-category="web">
+       <img src="Images/portfolio.png" class="rounded-xl h-48 w-full object-cover">
+       <div class="p-8">
+        <h3 class="text-2xl font-bold text-blue-900">
+          👩‍💻 Personal Portfolio
+        </h3>
+        <p class="text-gray-500 mt-4 leading-7">
+          A responsive personal portfolio website built with HTML and Tailwind CSS
+           to showcase my skills, projects, and education.
+        </p>
+        <div class="flex gap-4 mt-6 ">
+            <button 
+    type="button"
+    class="project-details bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700"
+    data-project="portfolio">
+    Details
+</button>
+           <a href="https://github.com/khizraliaqat-dev"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="border border-blue-600 text-blue-600 px-5 py-2 rounded-lg hover:bg-blue-600 hover:text-white">
+    GitHub
+</a>
+        </div>
+       </div>
+    </div>
+       <!-- -------ECommerce -->
+<div class="project-card bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col hover:-translate-y-3 transition-all duration-300"
+     data-category="web">
+       <img src="Images/ecommerce.png" class="rounded-xl h-48 w-full object-cover">
+       <div class="p-8">
+        <h3 class="text-2xl font-bold text-blue-900">
+          🛒 E-Commerce Website
+        </h3>
+        <p class="text-gray-500 mt-4 leading-7">
+         A responsive e-commerce website UI featuring product listings, categories,
+          and a modern shopping experience.
+        </p>
+        <div class="flex gap-4 mt-6 ">
+            <button 
+    type="button"
+    class="project-details bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700"
+    data-project="ecommerce">
+    Details
+</button>
+           <a href="https://github.com/khizraliaqat-dev"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="border border-blue-600 text-blue-600 px-5 py-2 rounded-lg hover:bg-blue-600 hover:text-white">
+    GitHub
+</a>
+        </div>
+       </div>
+    </div>
+</div>
+ </section>
+ <!-- ================= PROJECT DETAILS MODAL ================= -->
+
+<div id="project-modal"
+     class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-5">
+
+    <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-8 relative">
+
+        <!-- Close Button -->
+        <button id="close-modal"
+                type="button"
+                class="absolute top-4 right-5 text-2xl text-gray-500 hover:text-red-500">
+            &times ;
+        </button>
+
+        <!-- Project Title -->
+        <h2 id="modal-title"
+            class="text-3xl font-bold text-blue-900 mb-4">
+        </h2>
+
+        <!-- Project Description -->
+        <p id="modal-description"
+           class="text-gray-600 leading-7 mb-5">
+        </p>
+
+        <!-- Technologies -->
+        <h3 class="text-xl font-bold text-blue-900 mb-2">
+            Technologies
+        </h3>
+
+        <p id="modal-tech"
+           class="text-gray-600 mb-5">
+        </p>
+
+        <!-- Features -->
+        <h3 class="text-xl font-bold text-blue-900 mb-2">
+            Features
+        </h3>
+
+        <p id="modal-features"
+           class="text-gray-600 leading-7">
+        </p>
+
+    </div>
+
+</div>
+ <!-- --------- Education--------- -->
+ <section id="Education" class="py-20 bg-white">
+
+<div class="container mx-auto px-6">
+
+<h2 class="text-4xl font-bold text-center text-blue-900 uppercase">
+Education
+</h2>
+
+<div class="w-24 h-1 bg-blue-500 mx-auto mt-3 rounded-full"></div>
+
+
+
+<p class="text-center text-gray-600 mt-8 max-w-3xl mx-auto">
+My academic journey has provided me with a strong foundation in computing,
+problem-solving, and software development.
+</p>
+</div>
+<div class=" grid max-w-7xl mx-auto mt-16 grid-cols-1 lg:grid-cols-3 gap-8">
+  <div  class="bg-slate-50 rounded-2xl shadow-xl border-l-4 h-full border-blue-700 p-8 hover:-translate-y-2 hover:shadow-2xl hover:border-blue-500 cursor-pointer transition-all duration-300">
+      <div class="flex flex-col sm:flex-row justify-between items-center">
+        <h3 class="text-2xl font-bold text-blue-900">
+          🎓 BS Applied Computing
+        </h3>
+        <span class="bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm font-semibold">
+          Current
+        </span>
+      </div>
+         <p class="text-gray-700 mt-3">
+           🏫 University of Engineering & Technology, Lahore
+         </p>
+         <p class="text-blue-600 font-medium mt-2">
+             📅 2025 - Present
+         </p>
+         <p class="text-gray-600 leading-8 mt-4">
+             Currently pursuing BS Applied Computing, focusing on programming, web development, databases, 
+             and software engineering while improving practical development skills.
+        </p>  
+
+    </div>
+
+  <div class="bg-slate-50 rounded-2xl shadow-xl border-l-4 h-full border-blue-700 p-8 hover:-translate-y-2 hover:shadow-2xl hover:border-blue-500 cursor-pointer transition-all duration-300">
+       <div class="flex flex-col sm:flex-row justify-between items-center">
+        <h3 class="text-2xl font-bold text-blue-900">
+          🏫 Intermediate
+        </h3>
+        <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-semibold">
+           Completed
+        </span>
+      </div>
+         <p class="text-gray-700 mt-3">
+           🏫 Queen Marry  Graduate Collage,Lahore
+         </p>
+         <p class="text-blue-600 font-medium mt-2">
+             📅 2023 - 2025
+         </p>
+         <p class="text-gray-600 leading-8 mt-4">
+             Completed Intermediate with a strong academic foundation 
+             that enhanced analytical thinking, mathematics, and problem-solving skills.
+        </p>  
+            
+ </div>
+
+
+  <div class="bg-slate-50 rounded-2xl shadow-xl border-l-4 h-full border-blue-700 p-8 hover:-translate-y-2 hover:shadow-2xl hover:border-blue-500 cursor-pointer transition-all duration-300">
+      <div class="flex justify-between items-center">
+        <h3 class="text-2xl font-bold text-blue-900">
+          🏫 Matriculation
+        </h3>
+        <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-semibold">
+           Completed
+        </span>
+      </div>
+         <p class="text-gray-700 mt-3">
+           🏫 Pakistan Railway Education System, Lahore
+         </p>
+         <p class="text-blue-600 font-medium mt-2">
+             📅 2021 - 2023
+         </p>
+         <p class="text-gray-600 leading-8 mt-4">
+             Completed secondary education with a focus on science subjects, 
+             developing discipline and a strong interest in technology..
+        </p>  
+            
+  </div>
+</div>
+</section>
+<!-- -------------CONTACT SECTION-------- -->
+
+<section id="contact" class="py-20 bg-slate-50 shadow">
+
+<div class="container mx-auto px-6">
+
+<h2 class="text-4xl font-bold text-center text-blue-900 uppercase">
+  contact
+</h2>
+
+<div class="w-24 h-1 bg-blue-500 mx-auto mt-3 rounded-full"></div>
+<p class="text-center text-gray-600 mt-8 max-w-3xl mx-auto leading-8">
+  Feel free to reach out if you have a project idea, 
+  internship opportunity, or simply want to connect. I'm always open to learning and collaborating.
+</p>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-16">
+   <div class="bg-white rounded-2xl shadow-lg p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+        <h3 class="text-2xl font-bold text-blue-900">
+          Get In Touch
+        </h3>
+
+        <p class="text-gray-600 mt-4 leading-7">
+           I'd love to hear from you. Feel free to contact me for internships,
+          collaborations, or any exciting opportunities.
+        </p>
+   
+     <div class="mt-8 space-y-5">
+          <div class="flex items-center gap-4 bg-blue-50 rounded-xl p-4 hover:bg-blue-100 hover:translate-x-2 transition-all duration-300 cursor-pointer">
+              <div class="text-3xl">
+                 📧
+              </div>
+
+            <div>
+            <h4 class="font-bold text-blue-900">
+            Email
+            </h4>
+           <a href="mailto:khizraliaqat121@gmail.com"
+            class="text-gray-600 hover:text-blue-700">
+               khizraliaqat121@gmail.com
+            </a>
+         </div>
+</div>
+ 
+<div class="flex items-center gap-4 bg-blue-50 rounded-xl p-4 hover:bg-blue-100 hover:translate-x-2 transition-all duration-300 cursor-pointer">
+
+    <div class="text-3xl">
+        📍
+    </div>
+
+    <div>
+        <h4 class="font-bold text-blue-900">
+            Location
+        </h4>
+
+        <p class="text-gray-600">
+            Lahore, Pakistan
+        </p>
+    </div>
+
+</div>
+
+<div class="flex items-center gap-4 bg-blue-50 rounded-xl p-4 hover:bg-blue-100 hover:translate-x-2 transition-all duration-300 cursor-pointer">
+
+    <div class="text-3xl">
+        💻
+    </div>
+
+    <div>
+        <h4 class="font-bold text-blue-900">
+            GitHub
+        </h4>
+
+       <a href="https://github.com/khizraliaqat-dev"
+   target="_blank"
+   rel="noopener noreferrer">
+   github.com/khizraliaqat-dev
+</a>
+    </div>
+
+</div>
+
+<div class="flex items-center gap-4 bg-blue-50 rounded-xl p-4 hover:bg-blue-100 hover:translate-x-2 transition-all duration-300 cursor-pointer">
+
+    <div class="text-3xl">
+        💼
+    </div>
+
+    <div>
+        <h4 class="font-bold text-blue-900">
+            LinkedIn
+        </h4>
+
+      <a href="https://www.linkedin.com/in/khizra-liaqat-91162039b/"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="text-gray-600 hover:text-blue-700">
+   linkedin.com/in/khizra-liaqat-91162039b
+</a>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+<div class="bg-white rounded-2xl shadow-lg p-8">
+  <h3 class="text-2xl font-bold text-blue-900">
+   Send Message
+</h3>
+
+<p class="text-gray-600 mt-3">
+   Fill out the form below and I'll get back to you as soon as possible.
+</p>
+
+
+<form id="contact-form">
+
+    <div class="mt-8">
+
+        <label class="font-semibold text-gray-700">
+            Full Name
+        </label>
+
+        <input
+            id="name"
+            type="text"
+            placeholder="Enter your name"
+            class="w-full mt-2 p-3 rounded-xl border
+             border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+           <p id="name-error" class="text-red-500 text-sm mt-1"></p>
+    </div>
+
+
+    <div class="mt-5">
+
+        <label class="font-semibold text-gray-700">
+            Email Address
+        </label>
+
+        <input
+            id="email"
+            type="email"
+            placeholder="Enter your email"
+            class="w-full mt-2 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+           <p id="email-error" class="text-red-500 text-sm mt-1"></p>
+    </div>
+
+
+    <div class="mt-5">
+
+        <label class="font-semibold text-gray-700">
+            Subject
+        </label>
+
+        <input
+            id="subject"
+            type="text"
+            placeholder="Subject"
+            class="w-full mt-2 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+           <p id="subject-error" class="text-red-500 text-sm mt-1"></p>
+    </div>
+
+
+    <div class="mt-5">
+
+        <label class="font-semibold text-gray-700">
+            Message
+        </label>
+
+        <textarea
+            id="message"
+            rows="5"
+            placeholder="Write your message..."
+            class="w-full mt-2 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+           
+           <p id="message-error" class="text-red-500 text-sm mt-1"></p>
+
+           <p id="form-success"
+            class="hidden text-green-600 font-semibold text-center mt-4">
+            </p>
+    </div>
+     
+
+    <button
+        type="submit"
+        class="w-full bg-blue-700 text-white py-3 rounded-xl mt-6 hover:bg-yellow-500 transition-all duration-300 hover:scale-105 cursor-pointer">
+
+        Send Message
+
+    </button>
+  
+</form>
+
+
+</div>
+</div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-blue-950 text-white py-16">
+
+  <div class="container mx-auto px-6">
+
+    <!-- Footer Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+      <!-- Left Section -->
+      <div class="flex flex-col justify-center">
+
+        <img
+          src="./images/khizralogo.png"
+          alt="Khizra Logo"
+          class="w-32 mb-4">
+
+        <h2 class="text-3xl font-bold text-cyan-300">
+          Khizra Liaqat
+        </h2>
+
+        <p class="text-gray-300 mt-3">
+          Frontend Developer
+        </p>
+
+        <p class="text-gray-400">
+          Applied Computing Student
+        </p>
+
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+
+        <h3 class="text-xl font-semibold">
+          Quick Links
+        </h3>
+
+        <div class="w-10 h-1 bg-cyan-400 rounded-full mt-2 mb-5"></div>
+
+        <ul class="space-y-3">
+
+          <li>
+            <a href="#home"
+             class="hover:text-cyan-300 hover:translate-x-2 transition-all duration-300">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="#about"
+              class="hover:text-cyan-300 hover:translate-x-2 transition-all duration-300">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="#skills"
+              class="hover:text-cyan-300 hover:translate-x-2 transition-all duration-300">
+              Skills
+            </a>
+          </li>
+
+          <li>
+            <a href="#projects"
+              class="hover:text-cyan-300 hover:translate-x-2 transition-all duration-300">
+              Projects
+            </a>
+          </li>
+
+          <li>
+            <a href="#Education"
+              class="hover:text-cyan-300 hover:translate-x-2 transition-all duration-300">
+              Education
+            </a>
+          </li>
+
+          <li>
+            <a href="#contact"
+              class="hover:text-cyan-300 hover:translate-x-2 transition-all duration-300">
+              Contact
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- Connect -->
+      <div>
+
+        <h3 class="text-xl font-semibold">
+          Connect
+        </h3>
+
+        <div class="w-10 h-1 bg-cyan-400 rounded-full mt-2 mb-5"></div>
+
+        <ul class="space-y-3">
+
+          <li>
+
+            <a
+              href="mailto:khizraliaqat121@gmail.com"
+              class="hover:text-cyan-300 transition duration-300">
+
+              📧 Email
+
+            </a>
+
+          </li>
+
+          <li>
+
+            <a
+              href="https://github.com/khizraliaqat-dev"
+               rel="noopener noreferrer"
+              target="_blank"
+              class="hover:text-cyan-300 transition duration-300">
+
+              💻 GitHub
+
+            </a>
+
+          </li>
+
+          <li>
+
+           <a
+            href="https://www.linkedin.com/in/khizra-liaqat-91162039b/"
+            target="_blank"
+            rel="noopener noreferrer"
+             class="hover:text-cyan-300 transition duration-300">
+              💼 LinkedIn
+            </a>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+
+    <hr class="border-gray-700 my-10">
+
+    <!-- Bottom -->
+
+    <div class="text-center">
+
+      <p class="text-gray-400">
+
+      © <span id="year"></span> Khizra Liaqat. All Rights Reserved.
+
+      </p>
+
+      <p class="text-gray-500 text-sm mt-3">
+
+        Made with ❤️ using HTML & Tailwind CSS
+
+      </p>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script src="portfolio.js"></script>
+</body>
+
+
+</html>
